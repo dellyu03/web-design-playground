@@ -1,4 +1,5 @@
 /*
+배경 음영 처리
 <포인트>
 의사 요소 없이 구현 가능
 간단한 테마 색상을 그림자로 깔아 이미지에 확실한 인상을 줌
@@ -20,6 +21,7 @@
 
 
 /*
+줄 무늬 음영 배치
 <포인트>
 자연스럽고 이미지와 잘 어울리게 꾸밀 수 있음
 대각선의 굵기를 조절하여 분위기에 변화를 줌
@@ -51,5 +53,41 @@
         #d34323 0px, #d34323 2px,
         rgba(0 0 0 / 0) 0%, rgba(0 0 0 / 0) 1%
     );
+    z-index: 1;
+}
+
+
+
+
+/*
+점 무늬 음영 배치
+<포인트>
+점 무늬로 간단하면서도 귀여운 느낌을 줄 수 있음
+점 크기에 따라 분위기가 달라짐
+*/
+
+.pic {
+    position: absolute;
+
+}
+
+.pic img {
+    position:relative;
+    z-index: 2;
+}
+
+.pic::before{
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+        #ea9873 20%,
+        rgba(0 0 0 / 0) 21%
+    );
+    background-size: 10px 10px;
+    background-position:right bottom;
     z-index: 1;
 }
